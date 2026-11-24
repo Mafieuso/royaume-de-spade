@@ -5,9 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Royaume de Spade — Yugen · Black Clover</title>
 <meta name="description" content="Documentation du Royaume de Spade : fondements, hiérarchie, cultes, familles, pôles, démons. RP Yugen - Black Clover.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<canvas id="fx"></canvas>
 <button class="menu" aria-label="Menu">☰</button>
 <nav>
   <div class="logo">♠ SPADE</div>
@@ -38,12 +42,16 @@
 
 <!-- ACCUEIL -->
 <section id="accueil">
-  <h1>Royaume de Spade</h1>
-  <div class="tag">Yugen · Black Clover · Documentation spadienne</div>
-  <blockquote>🕷️ Spade – La loi du plus fort. Dans l'ombre, Spade impose sa propre justice. Ici, la faiblesse n'est pas tolérée. Seuls les plus rusés, les plus puissants et les plus dévoués gravissent les échelons. La force fait la loi, et Spade est la force.</blockquote>
+  <div class="hero">
+    <div class="spade">♠</div>
+    <h1>Royaume de Spade</h1>
+    <div class="tag">Yugen · Black Clover · Documentation spadienne</div>
+    <p class="lead">La loi du plus fort. Dans l'ombre, Spade impose sa propre justice. Ici, la faiblesse n'est pas tolérée : seuls les plus rusés, les plus puissants et les plus dévoués gravissent les échelons.</p>
+    <div class="cta"><a class="btn pri" href="#purge">La Purge de Voxaris</a><a class="btn" href="#hierarchie">Hiérarchie</a><a class="btn" href="#demons">Démons</a></div>
+    <div class="crown"><small>Souverain Unique</small><b>Voxaris Zogratis</b><span>Seul à détenir tous les pouvoirs du Royaume</span></div>
+  </div>
   <div class="card lore">
-    <h3 style="margin-top:0">Voxaris Zogratis règne seul</h3>
-    <p>Voxaris Zogratis vient de reprendre le pouvoir en liquidant tous les gradés et tous les Hauts Gradés de Spade. Pour le moment, il est <strong>le seul à détenir tous les pouvoirs</strong> : Triade, hiérarchie, cultes, pôles. <a href="#purge" style="color:var(--red2)">Lire la Purge →</a></p>
+    <p>Voxaris Zogratis vient de reprendre le pouvoir en liquidant tous les gradés et tous les Hauts Gradés de Spade. Pour le moment, il est <strong>le seul à détenir tous les pouvoirs</strong> : Triade, hiérarchie, cultes, pôles. <a href="#purge">Lire la Purge →</a></p>
   </div>
   <h2>Sommaire</h2>
   <div class="grid">
@@ -76,8 +84,8 @@
   <h2>Comment il a gagné</h2>
   <p>Voxaris ne s'est pas contenté de renverser les Triades : il possède <a href="#demons" style="color:var(--red2)">Mal'Zahareth, l'Éteigneur d'Aubes</a>, le démon le plus puissant du verse. Ce démon a détruit les défenses, les contrats et les serments des anciens dirigeants, et il est aussi responsable de la mort de <strong>Lucifero</strong> et de <strong>Beelzebub</strong>.</p>
   <h2>Chronologie</h2>
-  <div class="card">
-    <ol>
+  <div>
+    <ol class="tl">
       <li>Les Grinberryall règnent sur Spade. Dernier roi : Loyce, reine : Ciel.</li>
       <li>Les Zogratis renversent la Maison Royale avec l'aide de leurs démons.</li>
       <li>La Triade Sombre gouverne : Velkhiora Zogratis, Keryn Niaflem, Kaelen Snyle.</li>
@@ -216,6 +224,15 @@
   <p>Dans le Royaume de Spade, la hiérarchie est essentielle à la force collective. Au sommet de la hiérarchie militaire se trouvaient les Disciples, les Archontes et les Apôtres, figures d'autorité et de stratégie qui assuraient la protection, la direction des armées et la défense du royaume.</p>
   <div class="card lore">
     <p style="margin:0"><strong>Tous les rangs au-dessus de Servant Sombre sont aujourd'hui vacants.</strong> Voxaris Zogratis a éliminé les gradés et les Hauts Gradés ; il est seul au sommet. Les promotions reprennent depuis la base.</p>
+  </div>
+  <div class="pyr">
+    <div class="top">🔱 Voxaris Zogratis<small>Souverain Unique</small></div>
+    <div class="l1">Disciple<small>vacant</small></div>
+    <div class="l2">Archonte<small>vacant</small></div>
+    <div class="l3">Apôtre<small>vacant</small></div>
+    <div class="l4">Émissaire Sombre<small>vacant</small></div>
+    <div class="l5">Inquisiteur · Fidèle Sombre<small>vacant</small></div>
+    <div class="l6">Servant Sombre<small>rang d'entrée ouvert</small></div>
   </div>
   <table>
     <tr><th>Rang</th><th>Niveau de menace</th><th>Titulaire</th></tr>
@@ -436,7 +453,7 @@
   <div class="tag">Un suprême · Deux supérieurs · Trois intermédiaires · Un inférieur</div>
   <div class="card lore"><p style="margin:0">Mal'Zahareth est au-dessus de tous. Les six autres démons sont indépendants de Voxaris, mais aucun n'ose lui tenir tête.</p></div>
 
-  <div class="card lore">
+  <div class="card lore d-sup">
     <h2 style="margin-top:0">🩸 Mal'Zahareth, l'Éteigneur d'Aubes <span class="badge">Suprême</span></h2>
     <blockquote>« Il n'a jamais eu besoin de gagner. Il lui suffisait d'attendre que le soleil renonce. »</blockquote>
     <p>Le démon le plus puissant de tout le verse. Il n'appartient à aucune hiérarchie infernale et aucun grimoire ne cite son nom : avant le jour du pacte, il n'avait jamais été écrit nulle part. Il se situe hors de toute échelle. Les diables majeurs évitent de prononcer son nom.</p>
@@ -456,7 +473,7 @@
   </div>
 
   <h2>Démons Supérieurs</h2>
-  <div class="card">
+  <div class="card d-hi">
     <h3 style="margin-top:0">👑 Nhyr'Kassel, la Reine des Sept Fléaux</h3>
     <blockquote>« Je n'ai pas détruit les royaumes. J'ai seulement laissé le temps faire ce qu'il fait de mieux. »</blockquote>
     <p>Règne sur la ruine, la maladie et la décomposition. L'un des deux seuls démons dont la puissance approche celle de Mal'Zahareth sans l'égaler. Elle a refusé de se soumettre à lui, ce qui lui a valu de survivre là où Lucifero et Beelzebub sont tombés. Une femme d'une beauté fanée, la peau couverte de fissures dorées, entourée de sept couronnes d'os.</p>
@@ -464,7 +481,7 @@
     <p><strong>Caractère.</strong> Patiente, lucide, cruelle sans jamais perdre son calme. Elle observe Voxaris avec un intérêt froid : elle sait ce que cache sa marque noire.</p>
     <p><strong>Pacte.</strong> Elle choisit ses hôtes parmi ceux qui ont perdu un royaume, un clan ou une famille. Prix : <strong>un souvenir heureux</strong> par fléau invoqué.</p>
   </div>
-  <div class="card">
+  <div class="card d-hi">
     <h3 style="margin-top:0">👑 Ozmar'Vhel, le Juge des Pactes Brisés</h3>
     <blockquote>« Tout serment a un prix. Moi, je me contente de le faire payer. »</blockquote>
     <p>Gardien des contrats, des serments et des pactes. Il apparaît quand un pacte est rompu et rend sa sentence. Seul démon supérieur à ne s'être jamais prosterné devant Mal'Zahareth, ni à l'avoir défié : il le considère comme un contrat vivant qu'il ne peut pas juger. Un grand homme en robe de juge noire, les yeux remplacés par deux balances d'or, une chaîne dont chaque maillon est un serment brisé.</p>
@@ -474,19 +491,19 @@
   </div>
 
   <h2>Démons Intermédiaires</h2>
-  <div class="card">
+  <div class="card d-mid">
     <h3 style="margin-top:0">⚔️ Karthuun, la Lame sans Fourreau</h3>
     <blockquote>« Une lame qu'on ne range jamais finit par devenir son propre maître. »</blockquote>
     <p>Démon de la guerre et du duel, le plus puissant des intermédiaires. Un guerrier en armure de lames noires qui repoussent à mesure qu'on les brise, le bras droit fondu en une épée. Orgueilleux et droit, il refuse de frapper dans le dos. Il a vu Mal'Zahareth combattre une fois et a refusé de l'affronter : un tel combat n'aurait pas eu d'honneur.</p>
     <p><strong>Pouvoirs :</strong> Lame sans Fourreau · Duel Absolu · Mémoire de Combat · Écho d'Acier. <strong>Prix :</strong> ne jamais fuir un combat.</p>
   </div>
-  <div class="card">
+  <div class="card d-mid">
     <h3 style="margin-top:0">⚔️ Sylvareth, l'Ensorceleuse des Miroirs</h3>
     <blockquote>« Tu crois me voir ? Alors tu regardes déjà le mauvais reflet. »</blockquote>
     <p>Démone de l'illusion et du mensonge, la deuxième plus puissante des intermédiaires. Une silhouette changeante, aux yeux de miroirs sans fond. Joueuse et imprévisible, elle a tenté une fois de tromper Mal'Zahareth, et ne regarde plus jamais un miroir depuis.</p>
     <p><strong>Pouvoirs :</strong> Miroir Brisé · Voile des Désirs · Labyrinthe de Glace · Voix Empruntée. <strong>Prix :</strong> un reflet de l'hôte, qui vivra sa propre vie.</p>
   </div>
-  <div class="card">
+  <div class="card d-mid">
     <h3 style="margin-top:0">⚔️ Dorgathul, le Gardien des Gouffres</h3>
     <blockquote>« Les portes que je garde ne s'ouvrent qu'à ceux qui n'en reviendront pas. »</blockquote>
     <p>Gardien des portes entre le monde des vivants et les gouffres infernaux, le plus résistant des intermédiaires. Un colosse de roche volcanique parcouru de veines de lave, portant sur le dos un portail de pierre. Il gardait la porte par laquelle Mal'Zahareth est passé ; il l'a laissé passer en silence et ne répond plus à personne.</p>
@@ -494,7 +511,7 @@
   </div>
 
   <h2>Démon de Bas Rang</h2>
-  <div class="card">
+  <div class="card d-low">
     <h3 style="margin-top:0">🕯️ Grizzak, le Rongeur d'Ossements</h3>
     <blockquote>« Moi ? Je n'ai rien vu, rien entendu. Mais si tu as un os à me donner, je me souviendrai peut-être de quelque chose. »</blockquote>
     <p>Petit démon charognard, l'un des plus faibles de l'enfer, qui survit en vendant secrets, rumeurs et informations. Pas plus grand qu'un chat, il traîne un sac plein d'os. Il est le seul démon à avoir <strong>tout vu</strong> le jour où Lucifero et Beelzebub sont tombés. Quand on prononce le nom de Mal'Zahareth, il s'enfuit.</p>
@@ -570,7 +587,7 @@
   </ul>
 </section>
 
-<footer>♠ Royaume de Spade · Yugen — Black Clover · Documentation de jeu de rôle</footer>
+<footer>Royaume de Spade · Yugen — Black Clover</footer>
 </main>
 <script src="app.js"></script>
 </body>
