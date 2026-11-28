@@ -73,7 +73,6 @@ td:first-child{border-left:1px solid var(--line);border-radius:10px 0 0 10px}
 td:last-child{border-right:1px solid var(--line);border-radius:0 10px 10px 0}
 tr:hover td{background:var(--panel2)}
 .vacant{color:var(--mut);font-style:italic}
-td.vacant::before{content:"☠ "}
 .strike{text-decoration:line-through;text-decoration-color:var(--red);color:var(--mut)}
 ul{padding-left:22px}li{margin:4px 0}
 li::marker{color:var(--red2)}
@@ -132,3 +131,24 @@ footer::before{content:"♠";display:block;font-size:1.6rem;color:var(--red2);ma
  .pyr .top{width:50%}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* sections dépliables */
+.acc{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin:10px 0;overflow:hidden;transition:border-color .25s}
+.acc[open]{border-color:rgba(255,61,90,.45)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;font:700 1rem 'Cinzel',serif;letter-spacing:.08em;color:var(--gold2)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-size:1.4rem;color:var(--red2);line-height:1;transition:transform .25s}
+.acc[open] summary::after{transform:rotate(45deg)}
+.acc summary:hover{color:#fff;background:rgba(196,20,47,.12)}
+.acc-body{padding:0 20px 14px;animation:accin .3s ease}
+@keyframes accin{from{opacity:0;transform:translateY(-6px)}}
+.acc-body table{margin:4px 0}
+.acc-tools{text-align:right;margin:18px 0 4px}
+.acc-all{background:none;border:1px solid var(--line);color:var(--mut);border-radius:99px;padding:5px 16px;cursor:pointer;font:600 .68rem 'Cinzel',serif;letter-spacing:.15em;text-transform:uppercase}
+.acc-all:hover{border-color:var(--red2);color:#fff}
+.other{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:.95rem}
+.navd summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;margin:20px 10px 4px;font:700 .68rem 'Cinzel',serif;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.navd summary::-webkit-details-marker{display:none}
+.navd summary::after{content:"+";font-size:1rem;letter-spacing:0}
+.navd[open] summary::after{content:"–"}
+code{white-space:nowrap}

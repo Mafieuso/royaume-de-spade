@@ -5,7 +5,7 @@ const links = [...nav.querySelectorAll('a[href^="#"]')];
 // scroll reveal
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .08 });
 function reveal(sec) {
-  sec.querySelectorAll('.card,blockquote,h2,.pyr div,tr,ol.tl li').forEach((el, i) => {
+  [...sec.querySelectorAll('.card,blockquote,h2,.pyr div,tr,ol.tl li')].filter(el => !el.closest('details')).forEach((el, i) => {
     el.classList.remove('in'); el.classList.add('rv'); el.style.transitionDelay = (i % 6) * 50 + 'ms'; io.observe(el);
   });
 }
@@ -19,7 +19,15 @@ function show() {
   window.scrollTo(0, 0);
   nav.classList.remove('open');
   reveal(target);
+  if (target.id.startsWith('pole')) nav.querySelector('.navd').open = true;
 }
+// pages de pôle : tout ouvrir / tout fermer
+document.querySelectorAll('.acc-all').forEach(btn => btn.addEventListener('click', () => {
+  const list = [...btn.closest('section').querySelectorAll('details.acc')];
+  const open = !list.every(d => d.open);
+  list.forEach(d => d.open = open);
+  btn.textContent = open ? 'Tout fermer' : 'Tout ouvrir';
+}));
 addEventListener('hashchange', show);
 document.querySelector('.menu').addEventListener('click', () => nav.classList.toggle('open'));
 show();
